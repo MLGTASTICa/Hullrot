@@ -1,6 +1,7 @@
 using System.Linq;
 using System.Numerics;
 using System.Threading.Tasks;
+using Content.Shared.Physics;
 using Content.Shared.Projectiles;
 using Robust.Shared.Map;
 using Robust.Shared.Maths;
@@ -19,6 +20,10 @@ namespace Content.Shared._Crescent;
 public sealed partial class ProjectilePhasePreventComponent : Component
 {
     public Vector2 start = Vector2.Zero;
-    public Vector2 end = Vector2.Zero;
+    public MapId mapId = MapId.Nullspace;
+    public object containedAt;
+    // relevant collision Groups for this projectile.
+    [DataField]
+    public int relevantBitmasks = 0;
 
 }
